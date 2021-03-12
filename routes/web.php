@@ -18,6 +18,22 @@ Route::get('/', function () {
 });
 
 
+Route::get('/signup', function () {
+    return view('register');
+})->name('signup');
+
+Route::get('/signin', function () {
+    return view('login');
+})->name('signin');
+
+Route::get('teacher', function () {
+    return view('add_student');
+})->name('teacher');
+
+Route::get('student', function () {
+    return view('student');
+})->name('student');
+
 Route::get('/home', function () {
     return view('home');
 })->middleware(['auth'])->name('home');

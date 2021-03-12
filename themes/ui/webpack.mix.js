@@ -1,4 +1,4 @@
-const mix = require('laravel-mix');
+const mix = require("laravel-mix");
 
 /*
  |--------------------------------------------------------------------------
@@ -10,12 +10,8 @@ const mix = require('laravel-mix');
  | file for the application as well as bundling up all the JS files.
  |
  */
-
-let theme = process.env.npm_config_theme;
-
-if(theme) {
-   require(`${__dirname}/themes/${theme}/webpack.mix.js`);
-} else {
-    // default theme to compile if theme is not specified
-  require(`${__dirname}/themes/theme-name/webpack.mix.js`);
-}
+ 
+ 
+mix.setPublicPath("public/themes/ui")
+    .js(`${__dirname}/js/app.js`, "js")
+    .sass(`${__dirname}/sass/app.scss`, "css");
